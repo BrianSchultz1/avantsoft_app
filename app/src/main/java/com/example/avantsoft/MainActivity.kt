@@ -1,14 +1,16 @@
 package com.example.avantsoft
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.avantsoft.core.ApiResponse
-import com.example.avantsoft.modules.ApiService
-import com.example.avantsoft.modules.ServiceGenerator
+import com.example.avantsoft.domain.model.ApiResponse
+import com.example.avantsoft.service.ApiService
+import com.example.avantsoft.service.ServiceGenerator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,6 +41,19 @@ class MainActivity : AppCompatActivity() {
                     )
                     itemAnimator = DefaultItemAnimator()
                     scrollToPosition(0)
+                    addItemDecoration(
+                        object : RecyclerView.ItemDecoration() {
+                            override fun getItemOffsets(
+                                outRect: Rect,
+                                view: View,
+                                parent: RecyclerView,
+                                state: RecyclerView.State
+                            ) {
+                                super.getItemOffsets(outRect, view, parent, state)
+                                outRect.set(32, 32, 32, 32)
+                            }
+                        }
+                    )
 
                 }
 
@@ -48,6 +63,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d("API", "ERROR")
             }
 
-        })
-    }
+        })
+    }
 }

@@ -1,7 +1,7 @@
 <h1>AvantSoft</h1>
 Introdução
 
-    Esta é uma aplicação Mobile utilizando Kotlin, capaz de consumir a API. Ela lista alguns cars e também os detalhes deles
+    Esta é uma aplicação Mobile utilizando Kotlin, capaz de consumir a API. Ela lista alguns cards e também os detalhes deles
 
 Status:
 
